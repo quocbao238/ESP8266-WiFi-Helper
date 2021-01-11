@@ -4,18 +4,20 @@
 #include "Arduino.h"
 #include <ArduinoJson.h>
 
-
 extern StaticJsonDocument<200> jsonDoc;
 
-class WiFiModel {
+class WiFiModel
+{
 private:
-	String ssId;
-	String password;
+    String ssId;
+    String password;
+
 public:
-	String getssId();
+    String getssId();
     String getPassword();
     void setssId(String _ssId);
     void setPassword(String _password);
     bool initWiFiModel(String _jsonStr);
     bool readJson(String _jsonStr);
+    String createRandomName(String _name);
 };
