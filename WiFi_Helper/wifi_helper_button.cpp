@@ -15,7 +15,7 @@ bool WiFiButtonHelper::checkLongPress(int seconds)
 {
 	_longPressTime = seconds * 1000;
 	_currentState = digitalRead(_buttonPin);
-
+	_isLongDetected = false;
 	if (_lastState == HIGH && _currentState == LOW)
 	{ // button is pressed
 		_pressedTime = millis();

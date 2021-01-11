@@ -143,5 +143,4 @@ void loopCheckConnectNewDevice()
         DEBUG_PRINTLN(F("******* wiFiButtonHelper True *******"));
         _checkConfig = false;
     }
-    DEBUG_PRINTLN("     - _checkConfig: " + String(_checkConfig));
 }
