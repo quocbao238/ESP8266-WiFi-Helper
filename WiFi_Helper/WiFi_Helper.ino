@@ -1,12 +1,13 @@
-#include "setting.h"
-#include "function.h"
+#include "wifi_helper_main.h"
+
 
 void setup()
 {
-  onSetup();
+  Serial.begin(115200);
+  mainSetup();
 }
 
 void loop()
 {
-  onLoop();
+  mainLoop();
 }
