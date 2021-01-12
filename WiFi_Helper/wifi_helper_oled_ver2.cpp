@@ -1179,15 +1179,16 @@ void WiFiOledHelper::loadingProgressBar()
   }
 }
 
-// void WiFiOledHelper::showWiFiIpAddress()
-// {
-//   display.clear();
-//   display.drawXbm(34, 8, WiFi_Logo_width, WiFi_Logo_height, WiFi_Logo_bits);
-//   display.setFont(Irish_Grover_Regular_12);
-//   display.setTextAlignment(TEXT_ALIGN_CENTER);
-//   display.drawString(64, 48, "WIFI Connected");
-//   display.display();
-// }
+void WiFiOledHelper::showTempHumidity(String temp, String humi)
+{
+  display.clear();
+  display.setFont(Irish_Grover_Regular_12);
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(48, 32, temp);  
+  display.setTextAlignment(TEXT_ALIGN_CENTER);
+  display.drawString(48, 48, humi);
+  display.display();
+}
 
 void WiFiOledHelper::showConnectWiFiSuccessful(String _ssid)
 {
@@ -1195,6 +1196,6 @@ void WiFiOledHelper::showConnectWiFiSuccessful(String _ssid)
   display.drawXbm(34, 8, WiFi_Logo_width, WiFi_Logo_height, WiFi_Logo_bits);
   display.setFont(ArialMT_Plain_10);
   display.setTextAlignment(TEXT_ALIGN_CENTER);
-  display.drawString(64, 48, _ssid);
+  display.drawString(64, 52, _ssid);
   display.display();
 }

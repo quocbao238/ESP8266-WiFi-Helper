@@ -22,7 +22,7 @@ public:
 	WiFiOledHelper();
 	void begin();
 	void showConnectWiFiSuccessful(String _ssid);
-	// void showConnectWiFiSuccessful();
+	void showTempHumidity(String temp, String humi);
 	void loadingProgressBar();
 };
 

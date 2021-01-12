@@ -17,7 +17,10 @@ class EEPROMHelper {
     Warning_Function pF_Warning;
     EEPROMHelper();
     void begin();
+    void clearWiFiEEPRom();
     void writeJsonWiFi(String jsonStr);
     String readJsonWiFi();
+    String readToken();
+    void createToken();
 };
 

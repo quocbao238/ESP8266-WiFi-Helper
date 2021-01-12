@@ -4,6 +4,16 @@
 
 StaticJsonDocument<200> jsonDoc;
 
+String WiFiModel::getToken()
+{
+	return token;
+}
+void WiFiModel::setToken(String _token)
+{
+
+	token = _token;
+}
+
 String WiFiModel::getssId()
 {
 	return ssId;
@@ -12,6 +22,7 @@ void WiFiModel::setssId(String _ssId)
 {
 	ssId = _ssId;
 }
+
 String WiFiModel::getPassword()
 {
 	return password;
@@ -22,7 +33,7 @@ void WiFiModel::setPassword(String _password)
 }
 
 bool WiFiModel::initWiFiModel(String _jsonStr)
-{
+{	
 	bool _result = readJson(_jsonStr);
 	return _result;
 }
@@ -42,14 +53,8 @@ bool WiFiModel::readJson(String _jsonStr)
 	{
 		setssId(_ssidRead);
 		setPassword(_passRead);
+		DEBUG_PRINTLN("NewSSID:" + _ssidRead + " - NewPassword: " + _passRead);
 		return true;
 	}
 	return false;
-}
-
-String WiFiModel::createRandomName(String _name)
-{
-	int ranNumber = random(99999);
-	String _result = _name + String(ranNumber);
-	return _result;
 }
